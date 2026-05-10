@@ -17,7 +17,7 @@ Die App erzeugt Spiderplots, in denen ein FCN-Spieler als Referenz auf **100 %**
 
 - `fcn_datentool_app.ipynb` – Hauptnotebook / Voilà-App
 - `requirements.txt` – benötigte Python-Pakete
-- exbedded_excel_base64.txt – Externe Kopie der Datengrundlage 
+- `exbedded_excel_base64.txt` – Externe Kopie der Datengrundlage 
 
 Die Datengrundlage ist direkt im Notebook eingebettet. Es muss keine separate Excel-Datei hochgeladen werden.
 
