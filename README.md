@@ -1,3 +1,12 @@
+---
+title: FCN Datentool
+emoji: ⚽
+colorFrom: red
+colorTo: gray
+sdk: docker
+app_port: 7860
+---
+
 # FCN Datentool – Spiderplot-App
 
 Interaktive Voilà-App zur datenbasierten Evaluation von Spielern des 1. FC Nürnberg im Vergleich mit externen Spielern derselben Positionsgruppe.
