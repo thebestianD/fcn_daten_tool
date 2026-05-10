@@ -1,0 +1,9 @@
+pandas
+numpy
+matplotlib
+ipywidgets
+openpyxl
+voila
+ipykernel
+jupyter_client
+jupyter_core
