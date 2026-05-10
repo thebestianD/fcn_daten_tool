@@ -12,10 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           lfs: true
 
       - name: Push to Hugging Face Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          git push https://huggingface.co/spaces/thebestian/fcn_datentool main --force
+          git push https://thebestian:$HF_TOKEN@huggingface.co/spaces/thebestian/fcn_datentool main --force
