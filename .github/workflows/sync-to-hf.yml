@@ -15,6 +15,21 @@ jobs:
           fetch-depth: 0
           lfs: true
 
+      - name: Install Git Xet
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl unzip
+          curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/huggingface/xet-core/main/git_xet/install.sh | sudo sh
+          git xet install
+          git xet --version
+
+      - name: Track Excel files with LFS/Xet
+        run: |
+          git lfs track "*.xlsx"
+          git add .gitattributes
+          git add spieler_data.xlsx
+          git commit -m "Track Excel data via LFS/Xet" || echo "No LFS/Xet tracking changes to commit"
+
       - name: Push to Hugging Face Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
