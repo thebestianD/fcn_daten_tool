@@ -10,28 +10,44 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout GitHub repo
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0
           lfs: true
 
-      - name: Install Git Xet
+      - name: Install Git LFS and rsync
         run: |
           sudo apt-get update
-          sudo apt-get install -y curl unzip
-          curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/huggingface/xet-core/main/git_xet/install.sh | sudo sh
-          git xet install
-          git xet --version
+          sudo apt-get install -y git-lfs rsync
+          git lfs install
 
-      - name: Track Excel files with LFS/Xet
+      - name: Prepare clean Hugging Face repo
         run: |
+          mkdir /tmp/hfspace
+
+          rsync -av \
+            --exclude='.git' \
+            --exclude='.github' \
+            ./ /tmp/hfspace/
+
+          cd /tmp/hfspace
+
+          git init -b main
+          git config user.email "github-actions@github.com"
+          git config user.name "GitHub Actions"
+
+          git lfs install --local
           git lfs track "*.xlsx"
+
           git add .gitattributes
-          git add spieler_data.xlsx
-          git commit -m "Track Excel data via LFS/Xet" || echo "No LFS/Xet tracking changes to commit"
+          git add .
+          git lfs ls-files || true
+
+          git commit -m "Deploy to Hugging Face Space"
 
       - name: Push to Hugging Face Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          git push https://thebestian:$HF_TOKEN@huggingface.co/spaces/thebestian/fcn_datentool main --force
+          cd /tmp/hfspace
+          git push --force https://thebestian:$HF_TOKEN@huggingface.co/spaces/thebestian/fcn_datentool HEAD:main
