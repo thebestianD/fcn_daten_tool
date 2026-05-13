@@ -1,9 +1,10 @@
+voila
 pandas
 numpy
 matplotlib
 ipywidgets
 openpyxl
-voila
+xlsxwriter
 ipykernel
 jupyter_client
 jupyter_core
