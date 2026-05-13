@@ -38,6 +38,7 @@ jobs:
 
           git lfs install --local
           git lfs track "*.xlsx"
+          git lfs track "*.png"
 
           git add .gitattributes
           git add .
