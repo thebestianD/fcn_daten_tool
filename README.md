@@ -1,5 +1,5 @@
 ---
-title: FCN Datentool
+title: ClubProfile
 emoji: ⚽
 colorFrom: red
 colorTo: gray
@@ -7,24 +7,21 @@ sdk: docker
 app_port: 7860
 ---
 
-# FCN Datentool – Spiderplot-App
+# ClubProfile
 
-Interaktive Voilà-App zur datenbasierten Evaluation von Spielern des 1. FC Nürnberg im Vergleich mit externen Spielern derselben Positionsgruppe.
+Interaktive Voilà-App zur datenbasierten Evaluation von Spielerprofilen im Kontext des 1. FC Nürnberg.
 
-Die App erzeugt Spiderplots, in denen ein FCN-Spieler als Referenz auf **100 %** normalisiert wird. Vergleichsspieler werden relativ zu diesem Referenzspieler dargestellt. Zusätzlich werden absolute Referenzwerte, Transfermarkt-Steckbriefe und Profil-Links angezeigt.
+ClubProfile kombiniert zwei Analyseebenen:
 
-## Inhalt
+1. **Rollenprofil**  
+   Spieler werden anhand ihrer statistischen Profile mit verschiedenen Rollen verglichen. Die App zeigt passende Rollen, Rollen-Scores, Stärken/Schwächen und einen druckfähigen Spielersteckbrief.
 
-- `fcn_datentool_app.ipynb` – Hauptnotebook / Voilà-App
-- `requirements.txt` – benötigte Python-Pakete
-- `exbedded_excel_base64.txt` – Externe Kopie der Datengrundlage 
+2. **Metrikvergleich / Spiderplot**  
+   Spieler können über positionsgruppenbasierte Spiderplots mit FCN-Referenzspielern verglichen werden. Der FCN-Spieler wird je Metrik auf **100 %** normiert. Vergleichsspieler werden relativ dazu dargestellt.
 
-Die Datengrundlage ist direkt im Notebook eingebettet. Es muss keine separate Excel-Datei hochgeladen werden.
+## Live-App
 
-## Installation
+Die App läuft als Hugging-Face-Space:
 
-Repository klonen:
-
-```bash
-git clone https://github.com/thebestianD/fcn_daten_tool.git
-cd fcn_daten_tool
+```text
+https://thebestian-fcn-datentool.hf.space/
