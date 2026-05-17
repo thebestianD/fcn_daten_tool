@@ -11,7 +11,7 @@ app_port: 7860
 
 Interaktive Voilà-App zur datenbasierten Evaluation von Spielerprofilen im Kontext des 1. FC Nürnberg.
 
-ClubProfile kombiniert zwei Analyseebenen:
+ClubProfile kombiniert drei Analyseebenen:
 
 1. **Rollenprofil**  
    Spieler werden anhand ihrer statistischen Profile mit verschiedenen Rollen verglichen. Die App zeigt passende Rollen, Rollen-Scores, Stärken/Schwächen und einen druckfähigen Spielersteckbrief.
