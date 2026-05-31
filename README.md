@@ -36,7 +36,7 @@ Die in der App verwendeten **Leistungsmetriken** basieren auf Wyscout-Daten. Aus
 https://best11scouting.streamlit.app/
 ```
 
-Best11Scouting wurde von **@BeGriffis** bereitgestellt.
+Best11Scouting wird von **Ben Griffis (@BeGriffis auf Twitter)** bereitgestellt.
 
 Alle übrigen Spielerinformationen, insbesondere Stammdaten und Transfermarkt-Informationen wie Verein, Liga, Marktwert, Vertragslaufzeit oder Spielerprofil-Links, stammen von **transfermarkt.de**.
 
