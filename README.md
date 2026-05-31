@@ -28,6 +28,18 @@ ClubProfile kombiniert vier Analyseebenen:
 4. **Teambuilder**
    Aus vordefinierten Formationsvorlagen können Rollen-Eleven erstellt werden. Die App schlägt Spieler für jede Rolle vor und optimiert die Besetzung wahlweise nach **Score** oder **Fit**, entweder aus allen Spielern oder nur aus FCN-Spielern. Die Rollen werden positionsgetreu auf einem Spielfeld dargestellt und können direkt in der Grafik über Alternativen ausgetauscht werden.
 
+## Datenherkunft
+
+Die in der App verwendeten **Leistungsmetriken** basieren auf Wyscout-Daten. Ausgelesen wurden sie mithilfe von:
+
+```text
+https://best11scouting.streamlit.app/
+```
+
+Best11Scouting wurde von **@BeGriffis** bereitgestellt.
+
+Alle übrigen Spielerinformationen, insbesondere Stammdaten und Transfermarkt-Informationen wie Verein, Liga, Marktwert, Vertragslaufzeit oder Spielerprofil-Links, stammen von **transfermarkt.de**.
+
 ## Live-App
 
 Die App läuft als Hugging-Face-Space:
@@ -53,7 +65,12 @@ requirements.txt
 
 ### `spieler_data.xlsx`
 
-Enthält die Spielerbasis inklusive Stammdaten und Metrikwerten.
+Enthält die Spielerbasis inklusive Stammdaten, Transfermarkt-Informationen und Metrikwerten.
+
+Die Datei kombiniert zwei Datenquellen:
+
+* **Wyscout-Metriken**, ausgelesen über [Best11Scouting](https://best11scouting.streamlit.app/) von **@BeGriffis**
+* **Transfermarkt-Daten** von [transfermarkt.de](https://www.transfermarkt.de/), insbesondere Stammdaten, Vereins- und Ligainformationen, Marktwerte, Vertragsdaten und Profil-Links
 
 Die Datei bildet die Grundlage für:
 
